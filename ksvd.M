@@ -1,10 +1,10 @@
-function [ mD ] = DL_KSVD( mD, mX, paramCardinality )
+function [ mD ] = DL_KSVD( mD, mX, p )
 
       numberOfAtoms = size(mD, 2);
 
       for ii = 1:50
           %<! Update the Representations
-          mA = algo_omp(mX, mD, paramCardinality);
+          mA = algo_omp(mX, mD, p);
 
           %<! Update the Dictionary
           for jj = 1:5
